@@ -1,6 +1,6 @@
-# OpenClash 覆写模块 - config.yaml
+# OpenClash 覆写模块 - mihomo.yaml
 # 生成日期：2026-10-09
-# 源文件：https://raw.githubusercontent.com/wckls333/mihomo_yamls/main/THEYAMLS/General_Config/Repcz/config.yaml
+# 源文件：https://raw.githubusercontent.com/wckls333/mihomo_yamls/main/THEYAMLS/General_Config/Repcz/mihomo.yaml
 # 格式：新版 OpenClash [YAML] 块覆写
 #
 # 本文件仅包含 [YAML] 块覆写内容，不含任何 [General] 插件设置。
@@ -83,7 +83,7 @@
 # ==========================================================
 #
 # proxy-providers:
-#   Subscribe:
+#   Sub:
 #     health-check:
 #       enable: true
 #       interval: 1800
@@ -103,109 +103,41 @@
 #
 # proxy-groups:
 # - icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/applesafari.png
-#   include-all: true
-#   name: Manual
+#   name: Proxy
 #   proxies:
-#   - HongKong
-#   - United States
-#   - Singapore
-#   - Japan
-#   - Taiwan
-#   - DIRECT
+#   - Fallback
 #   type: select
-# - icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png
-#   name: Global
-#   proxies: &id001
-#   - Manual
-#   - HongKong
-#   - United States
-#   - Singapore
-#   - Japan
-#   - Taiwan
-#   - DIRECT
-#   type: select
-# - icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
-#   name: Streaming
-#   proxies: *id001
-#   type: select
-# - icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
-#   name: Microsoft
-#   proxies: *id001
-#   type: select
-# - icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
-#   name: Google
-#   proxies: *id001
-#   type: select
+#   use:
+#   - Sub
 # - icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/OpenAI.png
 #   name: AI
-#   proxies: *id001
+#   proxies:
+#   - Proxy
+#   - Fallback
 #   type: select
-# - icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Twitter.png
-#   name: Social
-#   proxies: *id001
-#   type: select
+#   use:
+#   - Sub
 # - icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
 #   name: Telegram
-#   proxies: *id001
+#   proxies:
+#   - Proxy
+#   - Fallback
 #   type: select
-# - icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Game.png
-#   name: Game
-#   proxies: *id001
-#   type: select
-# - icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png
-#   include-all: true
-#   name: Emby
-#   proxies: *id001
-#   type: select
-# - icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
-#   include-all: true
-#   name: Spotify
-#   proxies: *id001
-#   type: select
+#   use:
+#   - Sub
+# - icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available_1.png
+#   name: Fallback
+#   type: fallback
+#   use:
+#   - Sub
 # - icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
 #   name: Final
-#   proxies: *id001
+#   proxies:
+#   - Proxy
+#   - Fallback
 #   type: select
-# - filter: (?i)🇭🇰|香港|(\b(HK|Hong)\b)
-#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
-#   include-all: true
-#   interval: 300
-#   name: HongKong
-#   tolerance: 0
-#   type: url-test
-#   url: http://1.1.1.1/generate_204
-# - filter: (?i)🇺🇸|美国|洛杉矶|圣何塞|(\b(US|United States)\b)
-#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
-#   include-all: true
-#   interval: 300
-#   name: United States
-#   tolerance: 0
-#   type: url-test
-#   url: http://1.1.1.1/generate_204
-# - filter: (?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b)
-#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
-#   include-all: true
-#   interval: 300
-#   name: Singapore
-#   tolerance: 0
-#   type: url-test
-#   url: http://1.1.1.1/generate_204
-# - filter: (?i)🇯🇵|日本|东京|(\b(JP|Japan)\b)
-#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
-#   include-all: true
-#   interval: 300
-#   name: Japan
-#   tolerance: 0
-#   type: url-test
-#   url: http://1.1.1.1/generate_204
-# - filter: (?i)🇨🇳|🇹🇼|台湾|(\b(TW|Tai|Taiwan)\b)
-#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png
-#   include-all: true
-#   interval: 300
-#   name: Taiwan
-#   tolerance: 0
-#   type: url-test
-#   url: http://1.1.1.1/generate_204
+#   use:
+#   - Sub
 
 # ==========================================================
 # rule-providers（从源文件直接提取）
@@ -221,48 +153,12 @@
 #     interval: 86400
 #     type: http
 #     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/AI.list
-#   AppleProxy:
-#     behavior: classical
-#     format: text
-#     interval: 86400
-#     type: http
-#     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/AppleServers.list
-#   Bahamut:
-#     behavior: classical
-#     format: text
-#     interval: 86400
-#     type: http
-#     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Bahamut.list
 #   Direct:
 #     behavior: classical
 #     format: text
 #     interval: 86400
 #     type: http
 #     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Direct.list
-#   Disney:
-#     behavior: classical
-#     format: text
-#     interval: 86400
-#     type: http
-#     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Disney.list
-#   Emby:
-#     behavior: classical
-#     format: text
-#     interval: 86400
-#     type: http
-#     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Emby.list
-#   Epic:
-#     behavior: classical
-#     format: text
-#     interval: 86400
-#     type: http
-#     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Epic.list
-#   Facebook:
-#     behavior: classical
-#     format: text
-#     interval: 86400
-#     type: http
-#     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Facebook.list
 #   Github:
 #     behavior: classical
 #     format: text
@@ -275,12 +171,6 @@
 #     interval: 86400
 #     type: http
 #     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Google.list
-#   HBO:
-#     behavior: classical
-#     format: text
-#     interval: 86400
-#     type: http
-#     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/HBO.list
 #   Lan:
 #     behavior: classical
 #     format: text
@@ -293,18 +183,6 @@
 #     interval: 86400
 #     type: http
 #     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Microsoft.list
-#   Netflix:
-#     behavior: classical
-#     format: text
-#     interval: 86400
-#     type: http
-#     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Netflix.list
-#   PrimeVideo:
-#     behavior: classical
-#     format: text
-#     interval: 86400
-#     type: http
-#     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/PrimeVideo.list
 #   Proxy:
 #     behavior: classical
 #     format: text
@@ -317,30 +195,12 @@
 #     interval: 86400
 #     type: http
 #     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Reject.list
-#   Spotify:
-#     behavior: classical
-#     format: text
-#     interval: 86400
-#     type: http
-#     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Spotify.list
-#   Steam:
-#     behavior: classical
-#     format: text
-#     interval: 86400
-#     type: http
-#     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Steam.list
 #   Telegram:
 #     behavior: classical
 #     format: text
 #     interval: 86400
 #     type: http
 #     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Telegram.list
-#   TikTok:
-#     behavior: classical
-#     format: text
-#     interval: 86400
-#     type: http
-#     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/TikTok.list
 #   Twitter:
 #     behavior: classical
 #     format: text
@@ -360,28 +220,16 @@
 # ==========================================================
 #
 # rules:
-# - RULE-SET,Lan,DIRECT
 # - RULE-SET,Direct,DIRECT
 # - RULE-SET,Reject,REJECT
 # - RULE-SET,AI,AI
 # - RULE-SET,Telegram,Telegram
-# - RULE-SET,Twitter,Social
-# - RULE-SET,Facebook,Social
-# - RULE-SET,TikTok,Social
-# - RULE-SET,Steam,Game
-# - RULE-SET,Epic,Game
-# - RULE-SET,Google,Google
-# - RULE-SET,Github,Microsoft
-# - RULE-SET,Microsoft,Microsoft
-# - RULE-SET,Emby,Emby
-# - RULE-SET,Spotify,Spotify
-# - RULE-SET,Bahamut,Streaming
-# - RULE-SET,Netflix,Streaming
-# - RULE-SET,Disney,Streaming
-# - RULE-SET,PrimeVideo,Streaming
-# - RULE-SET,HBO,Streaming
-# - RULE-SET,Proxy,Global
-# - RULE-SET,AppleProxy,HongKong
+# - RULE-SET,Twitter,Fallback
+# - RULE-SET,Google,Fallback
+# - RULE-SET,Github,Fallback
+# - RULE-SET,Microsoft,Fallback
+# - RULE-SET,Proxy,Proxy
+# - RULE-SET,Lan,DIRECT
 # - GEOIP,CN,DIRECT
 # - MATCH,Final
 
@@ -394,7 +242,6 @@
 # ==========================================================
 #
 # dns:
-#   cache-algorithm: arc
 #   default-nameserver:
 #   - 223.5.5.5
 #   - 119.29.29.29
@@ -418,8 +265,5 @@
 #   ipv6: false
 #   listen: :1053
 #   nameserver:
-#   - https://dns.alidns.com/dns-query
 #   - https://doh.pub/dns-query
-#   proxy-server-nameserver:
 #   - https://dns.alidns.com/dns-query
-#   - https://doh.pub/dns-query
